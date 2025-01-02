@@ -9,26 +9,11 @@ provider "azurerm" {
     }
 }
 
-
-
 resource "azurerm_network_security_group" "example" {
   name                = "acceptanceTestSecurityGroup1"
   location            = "westeurope"
   resource_group_name = "iac-rego-testing"
 
-  security_rule {
-    name                       = "test123"
-    description                = "security_rule description"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-    source_application_security_group_ids = ["acceptanceTestSecurityGroup1"]
-  }
 
   tags = {
     environment = "Production"
