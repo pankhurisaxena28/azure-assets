@@ -14,7 +14,7 @@ provider "azurerm" {
 resource "azurerm_network_security_group" "example" {
   name                = "acceptanceTestSecurityGroup1"
   location            = "westeurope"
-  resource_group_name = "example-resources"
+  resource_group_name = "iac-rego-testing"
 
   security_rule {
     name                       = "test123"
