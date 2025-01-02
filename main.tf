@@ -4,7 +4,6 @@ provider "google" {
 }
 provider "azurerm" {
     subscription_id = "5b87efeb-4ef9-40ca-8cb4-cfa6d2cd0351"
-    tenant_id = "Google"
     features {
     }
 }
