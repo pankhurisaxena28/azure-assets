@@ -9,3 +9,13 @@ provider "azurerm" {
     }
 }
 
+resource "azurerm_network_security_group" "example" {
+  name                = "acceptanceTestSecurityGroup1"
+  location            = "westeurope"
+  resource_group_name = "iac-rego-testing"
+
+
+  tags = {
+    environment = "Production"
+  }
+}
