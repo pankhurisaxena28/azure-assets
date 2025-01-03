@@ -20,6 +20,7 @@ resource "azurerm_network_security_group" "example" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
+    source_port_range          = "*"
   }
 
   tags = {
