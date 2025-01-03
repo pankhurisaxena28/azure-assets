@@ -9,7 +9,7 @@ provider "azurerm" {
     }
 }
 
-resource "azurerm_network_security_group" "exampleS˝" {
+resource "azurerm_network_security_group" "exampleSG" {
   name                = "acceptanceTestSecurityGroup1"
   location            = "westeurope"
   resource_group_name = "iac-rego-testing"
