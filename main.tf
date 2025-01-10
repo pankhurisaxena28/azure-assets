@@ -9,6 +9,15 @@ provider "azurerm" {
     }
 }
 
+resource "google_storage_bucket" "test_bucket_bad" {
+  name                        = "test-bucket-bad"
+  location                    = "ASIA"
+  storage_class               = "ARCHIVE"
+  uniform_bucket_level_access = false
+
+
+}
+
 resource "azurerm_network_security_group" "exampleSG" {
   name                = "acceptanceTestSecurityGroup1"
   location            = "westeurope"
@@ -29,25 +38,4 @@ resource "azurerm_network_security_group" "exampleSG" {
   tags = {
     environment = "Production"
   }
-}
-
-resource "azurerm_storage_account" "exampleSA" {
-  name                     = "storageaccountname"
-  resource_group_name      = "iac-rego-testing"
-  location                 = "westeurope"
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
-
-  tags = {
-    environment = "Production"
-  }
-}
-
-resource "azurerm_security_center_contact" "exampleSC" {
-  name  = "contact"
-  email = "contact@example.com"
-  phone = "+1-555-555-5555"
-
-  alert_notifications = true
-  alerts_to_admins    = true
 }
