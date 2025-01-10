@@ -9,19 +9,15 @@ provider "azurerm" {
     }
 }
 
-resource "google_storage_bucket" "test_bucket_bad" {
-  name                        = "test-bucket-bad"
-  location                    = "EU"
+resource "google_storage_bucket" "test_bucket" {
+  name                        = "test-bucket"
+  location                    = "ASIA"
   storage_class               = "STANDARD"
-  uniform_bucket_level_access = true
-  logging {
-    log_bucket   = "my-unique-logging-bucket" // Create a separate bucket for logs
-    log_object_prefix = "tf-logs/"             // Optional prefix for better structure
-  }
+  uniform_bucket_level_access = false
 }
 
-resource "azurerm_network_security_group" "exampleSG" {
-  name                = "acceptanceTestSecurityGroup1"
+resource "azurerm_network_security_group" "test_network_security_group" {
+  name                = "test-network-security-group"
   location            = "westeurope"
   resource_group_name = "iac-rego-testing"
 
@@ -34,7 +30,7 @@ resource "azurerm_network_security_group" "exampleSG" {
     source_port_range          = 8080
     destination_port_range     = "*"
     source_address_prefix      = "*"
-    destination_address_prefix = "1010"
+    destination_address_prefix = "*"
   }
 
   tags = {
