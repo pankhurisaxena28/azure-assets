@@ -13,7 +13,7 @@ resource "google_storage_bucket" "test_bucket" {
   name                        = "test-bucket"
   location                    = "ASIA"
   storage_class               = "ARCHIVE"
-  uniform_bucket_level_access = FALSE
+  uniform_bucket_level_access = false
 }
 
 resource "azurerm_network_security_group" "test_network_security_group" {
