@@ -9,9 +9,9 @@ provider "azurerm" {
     }
 }
 
-resource "google_storage_bucket" "test_bucket_pankhuri" {
+resource "google_storage_bucket" "test_bucket_101" {
   project                     = "pankhuri-test-proj-436319"
-  name                        = "test-bucket-pankhuri"
+  name                        = "test-bucket-101"
   location                    = "EU"
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
@@ -22,8 +22,8 @@ resource "google_storage_bucket" "test_bucket_pankhuri" {
 
 }
 
-resource "azurerm_network_security_group" "test_network_security_group_pankhuri" {
-  name                = "test-network-security-group-pankhuri"
+resource "azurerm_network_security_group" "test_network_security_group_101" {
+  name                = "test-network-security-group-101"
   location            = "westeurope"
   resource_group_name = "iac-rego-testing"
 
