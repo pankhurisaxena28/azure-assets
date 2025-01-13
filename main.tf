@@ -1,6 +1,14 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+    }
+  }
+}
 provider "google" {
   project = "pankhuri-test-proj-436319"
   region  = "us-central1"
+  version="5.0"
 }
 provider "azurerm" {
     subscription_id = "5b87efeb-4ef9-40ca-8cb4-cfa6d2cd0351"
