@@ -9,32 +9,3 @@ provider "azurerm" {
     features {
     }
 }
-
-resource "google_storage_bucket" "test_bucket" {
-  name                        = "test-bucket"
-  location                    = "EU"
-  storage_class               = "STANDARD"
-  uniform_bucket_level_access = true
-}
-
-resource "azurerm_network_security_group" "test_network_security_group_1" {
-  name                = "test-network-security-group"
-  location            = "westeurope"
-  resource_group_name = "iac-rego-testing"
-
-  security_rule {
-    name                       = "test123"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = 8080
-    destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "8000"
-  }
-
-  tags = {
-    environment = "Production"
-  }
-}
