@@ -9,7 +9,7 @@ provider "azurerm" {
     }
 }
 
-resource "google_storage_bucket" "test_bucket_PS" {
+resource "google_storage_bucket" "test_bucket" {
   name                        = "test-bucket"
   location                    = "EU"
   storage_class               = "STANDARD"
