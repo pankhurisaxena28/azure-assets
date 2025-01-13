@@ -9,8 +9,8 @@ provider "azurerm" {
     }
 }
 
-resource "google_storage_bucket" "test_bucket" {
-  name                        = "test-bucket-101"
+resource "google_storage_bucket" "test_bucket_1" {
+  name                        = "test-bucket-1"
   location                    = "EU"
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
@@ -20,8 +20,8 @@ resource "google_storage_bucket" "test_bucket" {
   }
 }
 
-resource "azurerm_network_security_group" "test_network_security_group" {
-  name                = "test-network-security-group-101"
+resource "azurerm_network_security_group" "test_network_security_group_1" {
+  name                = "test-network-security-group-1"
   location            = "westeurope"
   resource_group_name = "iac-rego-testing"
 
