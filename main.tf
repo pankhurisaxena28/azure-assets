@@ -1,15 +1,8 @@
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-    }
-  }
-}
 provider "google" {
   project = "pankhuri-test-proj-436319"
   region  = "us-central1"
-  version="5.0"
 }
+
 provider "azurerm" {
     subscription_id = "5b87efeb-4ef9-40ca-8cb4-cfa6d2cd0351"
     tenant_id = "a162027e-b677-4249-b759-a9e6efa41922"
@@ -22,11 +15,6 @@ resource "google_storage_bucket" "test_bucket" {
   location                    = "EU"
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
-  logging {
-    log_bucket   = "my-unique-logging-bucket" // Create a separate bucket for logs
-    log_object_prefix = "tf-logs/"             // Optional prefix for better structure
-  }
-
 }
 
 resource "azurerm_network_security_group" "test_network_security_group_1" {
