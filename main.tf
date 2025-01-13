@@ -10,7 +10,7 @@ provider "azurerm" {
 }
 
 resource "google_storage_bucket" "test_bucket_1" {
-  name                        = "test-bucket"
+  name                        = "test-bucket-1"
   location                    = "EU"
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
