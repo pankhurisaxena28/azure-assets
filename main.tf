@@ -11,7 +11,7 @@ provider "azurerm" {
 
 resource "google_storage_bucket" "test_bucket_pankhuri" {
   project                     = "pankhuri-test-proj-436319"
-  name                        = "test-bucket-pankhuri"
+  name                        = "test-bucket-pankhuri-1"
   location                    = "EU"
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
