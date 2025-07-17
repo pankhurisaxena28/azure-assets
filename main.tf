@@ -10,8 +10,7 @@ provider "azurerm" {
 }
 
 resource "google_folder" "folder" {
-  name = "test"
-  display_name = "policy"
+  display_name = "test"
   parent       = "organizations/714470867684"
 }
 
