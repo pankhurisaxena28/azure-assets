@@ -9,6 +9,12 @@ provider "azurerm" {
     }
 }
 
+resource "google_folder" "folder" {
+  name = "test"
+  display_name = "policy"
+  parent       = "organizations/714470867684"
+}
+
 resource "google_storage_bucket" "test_bucket_pankhuri" {
   project                     = "pankhuri-test-proj-436319"
   name                        = "test-bucket-pankhuri-1"
