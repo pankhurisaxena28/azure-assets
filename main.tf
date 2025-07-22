@@ -24,7 +24,7 @@ resource "azurerm_network_security_group" "test_network_security_group_pankhuri"
     source_port_range          = 8080
     destination_port_range     = "*"
     source_address_prefix      = "*"
-    destination_address_prefix = "*"
+    destination_address_prefix = "8000"
   }
 
   tags = {
