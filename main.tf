@@ -32,10 +32,10 @@ resource "azurerm_network_security_group" "test_network_security_group_pankhuri"
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_port_range          = 8000
+    source_port_range          = 8080
     destination_port_range     = "*"
     source_address_prefix      = "*"
-    destination_address_prefix = "8000"
+    destination_address_prefix = "8080"
   }
 
   tags = {
