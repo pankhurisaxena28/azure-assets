@@ -23,7 +23,7 @@ resource "google_storage_bucket" "test_bucket_pankhuri" {
 }
 
 resource "google_bigquery_dataset" "default" {
-  dataset_id                  = "my-dataset"
+  dataset_id                  = "mydataset"
   friendly_name               = "test"
   description                 = "This is a test description"
   location                    = "us-east-1"
