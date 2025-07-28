@@ -15,7 +15,7 @@ resource "google_storage_bucket" "test_bucket_pankhuri" {
   name                        = "test-bucket-pankhuri"
   location                    = "ASIA"
   storage_class               = "ARCHIVE"
-  uniform_bucket_level_access = false
+  uniform_bucket_level_access = true
 }
 
 resource "google_bigquery_dataset" "default" {
