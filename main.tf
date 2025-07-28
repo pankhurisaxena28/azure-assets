@@ -22,6 +22,18 @@ resource "google_storage_bucket" "test_bucket_pankhuri" {
   }
 }
 
+resource "google_bigquery_dataset" "default" {
+  dataset_id                  = "my-dataset"
+  friendly_name               = "test"
+  description                 = "This is a test description"
+  location                    = "us-east-1"
+  default_table_expiration_ms = 3600000
+
+  labels = {
+    env = "default"
+  }
+}
+
 resource "azurerm_network_security_group" "test_network_security_group_pankhuri" {
   name                = "test-network-security-group-pankhuri"
   location            = "westeurope"
