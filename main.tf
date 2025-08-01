@@ -30,6 +30,23 @@ resource "google_bigquery_dataset" "default" {
   }
 }
 
+resource "google_kms_key_ring" "my_key_ring" {
+  name     = "my-key-ring-public"
+  location = "global"
+}
+
+resource "google_kms_key_ring_iam_binding" "public_key_ring_binding_all_users" {
+  key_ring_id = google_kms_key_ring.my_key_ring.id
+  role        = "roles/cloudkms.viewer" # Or any other role that grants access
+  members = ["allUsers"]
+}
+
+resource "google_kms_key_ring_iam_binding" "public_key_ring_binding_all_authenticated_users" {
+    key_ring_id = google_kms_key_ring.my_key_ring.id
+    role = "roles/cloudkms.cryptoKeyEncrypter"
+    members = ["allAuthenticatedUsers"]
+}
+
 resource "azurerm_network_security_group" "test_network_security_group_pankhuri" {
   name                = "test-network-security-group-pankhuri"
   location            = "westeurope"
