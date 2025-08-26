@@ -52,3 +52,9 @@ resource "azurerm_network_security_group" "test_network_security_group_pankhuri"
   }
 }
 
+resource "google_project_iam_member" "secure" {
+  project = "pankhuri-test-proj-436319"
+  role    = "roles/owner"  # More specific predefined role
+  member  = "user:pankhurisaxena@google.com"
+}
+
