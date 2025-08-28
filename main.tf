@@ -25,7 +25,7 @@ resource "google_storage_bucket" "test_bucket_pankhuri" {
   name                        = "test-bucket-pankhuri"
   location                    = "ASIA"
   storage_class               = "ARCHIVE"
-  uniform_bucket_level_access = false
+  uniform_bucket_level_access = true
 }
 
 resource "azurerm_network_security_group" "test_network_security_group_pankhuri" {
@@ -42,7 +42,7 @@ resource "azurerm_network_security_group" "test_network_security_group_pankhuri"
     source_port_range          = 8080
     destination_port_range     = "*"
     source_address_prefix      = "*"
-    destination_address_prefix = "*"
+    destination_address_prefix = "8080"
   }
 
   tags = {
