@@ -52,3 +52,8 @@ resource "azurerm_network_security_group" "test_network_security_group_pankhuri"
   }
 }
 
+resource "google_project_iam_member" "project_editor_violation" {
+  project = "pankhuri-test-proj-436319" # Replace with your project ID
+  role    = "roles/editor"    # This line violates the PRIMITIVE_ROLES_USED policy
+  member  = "user:pankhurisaxena@google.com"
+}
