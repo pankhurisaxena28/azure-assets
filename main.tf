@@ -7,7 +7,7 @@ provider "azurerm" {
 }
 
 resource "google_bigquery_dataset" "default" {
-  project = "pankhuri-test-proj-436319"
+
   dataset_id                  = "mydataset"
   friendly_name               = "test"
   description                 = "This is a test description"
