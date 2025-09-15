@@ -19,6 +19,7 @@ resource "google_bigquery_dataset" "default" {
   }
 }
 resource "google_storage_bucket" "test_bucket_pankhuri" {
+  project                     = "pankhuri-test-proj-436319"
   name                        = "test-bucket-pankhuri"
   location                    = "ASIA"
   storage_class               = "ARCHIVE"
