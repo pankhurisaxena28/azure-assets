@@ -1,20 +1,20 @@
 
 # Storage bucket for testing OPC gcp.restrictTLSVersion
 resource "google_storage_bucket" "static-site" {
-  name          = "restrict-tls-opc-test-bucket"
+  name          = "restrict-tls-opc-test-bucket-tarang"
   location      = "US"
   project       = "pankhuri-test-436319"
   force_destroy = true
 }
 
 resource "google_kms_key_ring" "key_ring" {
-  name     = "test_policy_violation_key_ring"
+  name     = "test_policy_violation_key_ring_tarang"
   project  = "pankhuri-test-436319"
   location = "us-east4"
 }
 
 resource "google_kms_crypto_key" "crypto_keys" {
-  name                       = "test_rotation_period_policy_violation_key"
+  name                       = "test_rotation_period_policy_violation_key_tarang"
   key_ring                   = google_kms_key_ring.key_ring.id
   rotation_period            = "7862400s" # 91 days
   destroy_scheduled_duration = "604800s"  # 7 days
