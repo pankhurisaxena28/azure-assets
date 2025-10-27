@@ -13,13 +13,6 @@ resource "google_kms_key_ring" "key_ring" {
   location = "us-east4"
 }
 
-resource "google_kms_crypto_key" "crypto_keys" {
-  name                       = "test_rotation_period_policy_violation_key_tarang"
-  key_ring                   = google_kms_key_ring.key_ring.id
-  rotation_period            = "7862400s" # 91 days
-  destroy_scheduled_duration = "604800s"  # 7 days
-}
-
 
 provider "azurerm" {
     subscription_id = "5b87efeb-4ef9-40ca-8cb4-cfa6d2cd0351"
