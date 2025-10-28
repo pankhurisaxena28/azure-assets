@@ -1,12 +1,4 @@
 
-# Storage bucket for testing OPC gcp.restrictTLSVersion
-resource "google_storage_bucket" "static-site" {
-  name          = "restrict-tls-opc-test-bucket-tarang"
-  location      = "US"
-  project       = "pankhuri-test-proj-436319"
-  force_destroy = true
-}
-
 resource "google_kms_key_ring" "key_ring" {
   name     = "test_policy_violation_key_ring_tarang"
   project  = "pankhuri-test-proj-436319"
