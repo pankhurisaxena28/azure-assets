@@ -53,3 +53,4 @@ resource "azurerm_network_security_group" "test_network_security_group_pankhuri"
     environment = "Production"
   }
 }
+
